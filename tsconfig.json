@@ -29,8 +29,8 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    ".eslintrc.cjs",
+    "src",
   ],
   "references": [
     {
