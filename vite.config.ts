@@ -1,3 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/// <reference types="vitest"/>
+/// <reference types="vitest/globals"/>
 import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
@@ -24,6 +27,11 @@ export default defineConfig(({ mode }) => {
     esbuild: { drop: isDev ? [] : ['console', 'debugger'] },
     server: {
       port: 3000
+    },
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: []
     }
   }
 })
