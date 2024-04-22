@@ -19,6 +19,16 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    'react/react-in-jsx-scope': 0
+    'react/react-in-jsx-scope': 0,
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/*.{test,spec}.{ts,tsx}', // repos with a single test file
+          '**/setupTests.ts' // vitest config
+        ],
+        optionalDependencies: false
+      }
+    ]
   }
 }
